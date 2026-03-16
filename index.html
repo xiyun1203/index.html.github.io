@@ -3,97 +3,151 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>王紫涵 · 个人简历</title>
+  <title>WANG ZIHAN · RESUME</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ===== 页面容器 ===== -->
+  <!-- 背景粒子画布 -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- 顶部扫描线装饰 -->
+  <div class="scan-line"></div>
+
+  <!-- ========== 页面主容器 ========== -->
   <div class="page">
 
     <!-- ===== 左侧边栏 ===== -->
     <aside class="sidebar">
 
-      <!-- 头像 + 姓名 -->
+      <!-- 系统状态指示灯 -->
+      <div class="sys-bar">
+        <span class="sys-dot green"></span>
+        <span class="sys-dot yellow"></span>
+        <span class="sys-dot red"></span>
+        <span class="sys-label">SYS // ONLINE</span>
+      </div>
+
+      <!-- 头像区 -->
       <div class="profile">
-        <div class="avatar">王</div>
-        <h1 class="name">王紫涵</h1>
-        <p class="title">前端开发工程师</p>
+        <div class="avatar-wrap">
+          <div class="avatar-ring"></div>
+          <div class="avatar">王</div>
+        </div>
+        <h1 class="name">
+          <span class="name-zh">王紫涵</span>
+          <span class="name-en">WANG ZIHAN</span>
+        </h1>
+        <div class="title-badge">
+          <span class="title-dot"></span>
+          <span>前端开发工程师</span>
+        </div>
       </div>
 
       <!-- 联系方式 -->
       <section class="side-section">
-        <h2 class="side-heading">联系方式</h2>
+        <h2 class="side-heading">
+          <span class="heading-bracket">[</span>
+          CONTACT
+          <span class="heading-bracket">]</span>
+        </h2>
         <ul class="contact-list">
-          <li>
-            <span class="icon">✉</span>
+          <li class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
             <span>wangzihan@hnu.edu.cn</span>
           </li>
-          <li>
-            <span class="icon">📱</span>
+          <li class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
             <span>188 0000 0000</span>
           </li>
-          <li>
-            <span class="icon">🐙</span>
+          <li class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+            </svg>
             <a href="#" class="link">github.com/wangzihan</a>
           </li>
-          <li>
-            <span class="icon">📍</span>
-            <span>湖南·长沙</span>
+          <li class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <span>湖南 · 长沙</span>
           </li>
         </ul>
       </section>
 
-      <!-- 技能 -->
+      <!-- 技术技能 -->
       <section class="side-section">
-        <h2 class="side-heading">技术技能</h2>
-        <div class="skill-group">
-          <p class="skill-label">前端框架</p>
-          <div class="skill-tags">
-            <span class="tag">React 18</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">Vite</span>
+        <h2 class="side-heading">
+          <span class="heading-bracket">[</span>
+          SKILLS
+          <span class="heading-bracket">]</span>
+        </h2>
+
+        <div class="skill-block">
+          <p class="skill-label">// 前端框架</p>
+          <div class="skill-bars">
+            <div class="skill-row">
+              <span class="skill-name">React 18</span>
+              <div class="skill-track"><div class="skill-fill" style="--w:90%"></div></div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">TypeScript</span>
+              <div class="skill-track"><div class="skill-fill" style="--w:85%"></div></div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">Vite</span>
+              <div class="skill-track"><div class="skill-fill" style="--w:80%"></div></div>
+            </div>
           </div>
         </div>
-        <div class="skill-group">
-          <p class="skill-label">状态 / 动画</p>
+
+        <div class="skill-block">
+          <p class="skill-label">// 状态 &amp; 动画</p>
           <div class="skill-tags">
             <span class="tag">Zustand</span>
             <span class="tag">Framer Motion</span>
           </div>
         </div>
-        <div class="skill-group">
-          <p class="skill-label">样式</p>
+
+        <div class="skill-block">
+          <p class="skill-label">// 算法 &amp; 数据结构</p>
+          <div class="skill-tags">
+            <span class="tag accent">BFS</span>
+            <span class="tag accent">Dijkstra</span>
+            <span class="tag accent">A*</span>
+            <span class="tag accent">MinHeap</span>
+          </div>
+        </div>
+
+        <div class="skill-block">
+          <p class="skill-label">// 其他</p>
           <div class="skill-tags">
             <span class="tag">TailwindCSS</span>
-            <span class="tag">CSS3</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <p class="skill-label">算法 / 数据结构</p>
-          <div class="skill-tags">
-            <span class="tag">BFS</span>
-            <span class="tag">Dijkstra</span>
-            <span class="tag">A*</span>
-            <span class="tag">最小堆</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <p class="skill-label">其他</p>
-          <div class="skill-tags">
             <span class="tag">Git</span>
             <span class="tag">HTML5</span>
-            <span class="tag">JavaScript</span>
           </div>
         </div>
       </section>
 
-      <!-- 荣誉奖项 -->
+      <!-- 荣誉 -->
       <section class="side-section">
-        <h2 class="side-heading">荣誉奖项</h2>
-        <div class="award-item">
-          <p class="award-name">🌟 太阳慈善公益奖学金</p>
-          <p class="award-meta">湖南大学 · 2024</p>
+        <h2 class="side-heading">
+          <span class="heading-bracket">[</span>
+          AWARDS
+          <span class="heading-bracket">]</span>
+        </h2>
+        <div class="award-card">
+          <div class="award-glow"></div>
+          <div class="award-icon">★</div>
+          <div class="award-info">
+            <p class="award-name">太阳慈善公益奖学金</p>
+            <p class="award-meta">湖南大学 &nbsp;·&nbsp; 2024</p>
+          </div>
         </div>
       </section>
 
@@ -102,97 +156,152 @@
     <!-- ===== 右侧主内容 ===== -->
     <main class="main">
 
+      <!-- 顶部系统 ID 栏 -->
+      <div class="id-bar">
+        <span class="id-label">ID://</span>
+        <span class="id-value" id="typewriter"></span>
+        <span class="cursor-blink">_</span>
+        <span class="id-status">● ACTIVE</span>
+      </div>
+
       <!-- 教育经历 -->
       <section class="section" id="education">
         <h2 class="section-heading">
-          <span class="heading-icon">🎓</span>教育经历
+          <span class="sec-num">01</span>
+          <span class="sec-line"></span>
+          <span class="sec-title">EDUCATION</span>
+          <span class="sec-title-zh">教育经历</span>
         </h2>
-        <div class="edu-item">
-          <div class="edu-header">
-            <div>
-              <p class="edu-school">湖南大学</p>
-              <p class="edu-major">计算机科学与技术 · 本科</p>
+
+        <div class="edu-card">
+          <div class="edu-left-bar"></div>
+          <div class="edu-content">
+            <div class="edu-header">
+              <div>
+                <p class="edu-school">湖南大学
+                  <span class="edu-abbr">HNU</span>
+                </p>
+                <p class="edu-major">计算机科学与技术 &nbsp;/&nbsp; 本科</p>
+              </div>
+              <div class="edu-date-wrap">
+                <span class="edu-date">2022.09 — 2026.06</span>
+                <span class="edu-status">IN PROGRESS</span>
+              </div>
             </div>
-            <span class="edu-date">2022.09 — 2026.06（预计）</span>
+            <ul class="edu-detail">
+              <li>
+                <span class="detail-arrow">&gt;</span>
+                主修：数据结构与算法、计算机网络、操作系统、软件工程
+              </li>
+              <li>
+                <span class="detail-arrow">&gt;</span>
+                积极参与校内外开源项目与编程竞赛
+              </li>
+            </ul>
           </div>
-          <ul class="edu-detail">
-            <li>主修：数据结构与算法、计算机网络、操作系统、软件工程</li>
-            <li>积极参与校内外开源项目与编程竞赛</li>
-          </ul>
         </div>
       </section>
 
       <!-- 项目经历 -->
       <section class="section" id="project">
         <h2 class="section-heading">
-          <span class="heading-icon">🚀</span>项目经历
+          <span class="sec-num">02</span>
+          <span class="sec-line"></span>
+          <span class="sec-title">PROJECT</span>
+          <span class="sec-title-zh">项目经历</span>
         </h2>
 
         <div class="project-card" id="abyss-card">
+          <!-- 四角装饰 -->
+          <span class="corner tl"></span>
+          <span class="corner tr"></span>
+          <span class="corner bl"></span>
+          <span class="corner br"></span>
+
           <!-- 项目标题行 -->
           <div class="project-header">
             <div class="project-title-wrap">
-              <h3 class="project-name">深渊逃生 · ABYSS ESCAPE</h3>
+              <h3 class="project-name">
+                <span class="proj-en">ABYSS ESCAPE</span>
+                <span class="proj-zh">深渊逃生</span>
+              </h3>
               <div class="project-tags">
                 <span class="ptag react">React</span>
                 <span class="ptag ts">TypeScript</span>
                 <span class="ptag zustand">Zustand</span>
                 <span class="ptag framer">Framer Motion</span>
+                <span class="ptag vite">Vite</span>
               </div>
             </div>
-            <span class="project-date">2024.10 — 2025.01</span>
+            <div class="project-meta">
+              <span class="project-date">2024.10 — 2025.01</span>
+              <span class="project-badge">PERSONAL</span>
+            </div>
           </div>
 
-          <p class="project-desc">
-            一款将经典寻路算法游戏化的交互式 Web 应用。玩家在 20×20 网格上自由绘制地形，
-            选择算法实时观察探索过程与最优路径动画；融合体力消耗系统、战争迷雾、关卡预设及
-            S/A/B/C/F 成就评定，使算法演示具备完整游戏体验闭环。
-          </p>
+          <!-- 描述 -->
+          <div class="project-desc-wrap">
+            <span class="desc-prefix">// DESC &gt;&gt;&gt;</span>
+            <p class="project-desc">
+              一款将经典寻路算法游戏化的交互式 Web 应用。玩家在 20×20 网格上自由绘制地形，
+              选择算法实时观察探索过程与最优路径动画；融合体力消耗系统、战争迷雾、关卡预设及
+              S/A/B/C/F 成就评定，使算法演示具备完整游戏体验闭环。
+            </p>
+          </div>
 
+          <!-- 技术要点 -->
           <ul class="project-bullets">
             <li>
-              <span class="bullet-dot"></span>
-              独立实现 <strong>BFS、Dijkstra、A*</strong> 三种寻路算法，支持地形权重（泥沼 cost=3）；
-              手写泛型 <strong>MinHeap&lt;T&gt;</strong>（二叉堆）为 Dijkstra/A* 提供
-              O(log n) 优先级队列，零第三方依赖。
+              <span class="bullet-line"></span>
+              <span>
+                独立实现 <strong>BFS、Dijkstra、A*</strong> 三种寻路算法，支持地形权重（泥沼 cost=3）；
+                手写泛型 <strong>MinHeap&lt;T&gt;</strong>（二叉堆）为 Dijkstra/A* 提供
+                O(log n) 优先级队列，零第三方依赖。
+              </span>
             </li>
             <li>
-              <span class="bullet-dot"></span>
-              设计 5 档速度 + 暂停/续播动画引擎（idle→running⇌paused→done 状态机），
-              引入 <strong>generation 机制</strong>解决 setTimeout 竞态问题，
-              通过 <code>progressRef</code> 断点精确续播，400 节点同屏流畅运行。
+              <span class="bullet-line"></span>
+              <span>
+                设计 5 档速度 + 暂停/续播动画引擎（idle→running⇌paused→done 状态机），
+                引入 <strong>generation 机制</strong>解决 setTimeout 竞态问题，
+                通过 <code>progressRef</code> 断点精确续播，400 节点同屏流畅运行。
+              </span>
             </li>
             <li>
-              <span class="bullet-dot"></span>
-              基于 <strong>Zustand</strong> 拆分网格/游戏双 Store，配合
-              <strong>React.memo + 自定义比较函数</strong>，
-              单次算法动画期间减少约 90% 无效重渲染。
+              <span class="bullet-line"></span>
+              <span>
+                基于 <strong>Zustand</strong> 拆分网格/游戏双 Store，配合
+                <strong>React.memo + 自定义比较函数</strong>，
+                单次算法动画期间减少约 90% 无效重渲染。
+              </span>
             </li>
             <li>
-              <span class="bullet-dot"></span>
-              实现<strong>战争迷雾</strong>（曼哈顿距离视野计算）、
-              <strong>鼠标拖拽绘墙</strong>（lastCellRef 去重防抖）、
-              4 关卡预设及自由绘图模式。
+              <span class="bullet-line"></span>
+              <span>
+                实现<strong>战争迷雾</strong>（曼哈顿距离视野）、
+                <strong>鼠标拖拽绘墙</strong>（lastCellRef 去重防抖）、
+                4 关卡预设及自由绘图模式。
+              </span>
             </li>
           </ul>
 
-          <!-- 技术亮点小卡片 -->
+          <!-- 数据亮点 -->
           <div class="highlight-bar">
             <div class="highlight-item">
               <span class="hl-num">3</span>
               <span class="hl-label">寻路算法</span>
             </div>
-            <div class="highlight-divider"></div>
+            <div class="hl-sep"></div>
             <div class="highlight-item">
               <span class="hl-num">O(log n)</span>
               <span class="hl-label">手写最小堆</span>
             </div>
-            <div class="highlight-divider"></div>
+            <div class="hl-sep"></div>
             <div class="highlight-item">
               <span class="hl-num">90%↓</span>
               <span class="hl-label">无效重渲染</span>
             </div>
-            <div class="highlight-divider"></div>
+            <div class="hl-sep"></div>
             <div class="highlight-item">
               <span class="hl-num">400</span>
               <span class="hl-label">节点同屏</span>
@@ -204,15 +313,30 @@
       <!-- 自我评价 -->
       <section class="section" id="about">
         <h2 class="section-heading">
-          <span class="heading-icon">💡</span>自我评价
+          <span class="sec-num">03</span>
+          <span class="sec-line"></span>
+          <span class="sec-title">ABOUT</span>
+          <span class="sec-title-zh">自我评价</span>
         </h2>
-        <p class="about-text">
-          对前端工程与算法均有较浓厚的兴趣，能将数据结构知识落地到实际产品体验中。
-          注重代码可读性与性能优化，具备独立完成从设计到上线全流程的项目经验。
-          学习能力强，乐于在开源社区分享与交流；具备良好的文档习惯，
-          能用注释和 README 清晰阐述技术决策。
-        </p>
+
+        <div class="about-card">
+          <p class="about-text">
+            对前端工程与算法均有较浓厚的兴趣，能将数据结构知识落地到实际产品体验中。
+            注重代码可读性与性能优化，具备独立完成从设计到上线全流程的项目经验。
+            学习能力强，乐于在开源社区分享与交流；具备良好的文档习惯，
+            能用注释和 README 清晰阐述技术决策。
+          </p>
+        </div>
       </section>
+
+      <!-- 底部版权行 -->
+      <div class="footer-bar">
+        <span>© 2025 WANG ZIHAN</span>
+        <span class="footer-sep">//</span>
+        <span>RESUME v1.0.0</span>
+        <span class="footer-sep">//</span>
+        <span id="footer-time"></span>
+      </div>
 
     </main>
   </div>
